@@ -1,7 +1,7 @@
 {
-  "name": "wasm-template-rust",
+  "name": "game-of-life",
   "version": "0.1.0",
-  "description": "A template for no npm wasm-rust and github hosting",
+  "description": "game-of-life",
   "main": "index.js",
   "bin": {
     "create-wasm-app": ".bin/create-wasm-app.js"
@@ -24,7 +24,7 @@
   "author": "WR104",
   "license": "(MIT OR Apache-2.0)",
   "dependencies": {
-    "wasm-template-rust": "file:../pkg"
+    "game-of-life": "file:../pkg"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.0",

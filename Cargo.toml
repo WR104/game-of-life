@@ -1,5 +1,5 @@
 [package]
-name = "wasm-template-rust"
+name = "game_of_life"
 version = "0.1.0"
 authors = ["WR104"]
 edition = "2018"
