@@ -1,0 +1,61 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
+
+/***/ "../pkg/game_of_life.js":
+/*!******************************!*\
+  !*** ../pkg/game_of_life.js ***!
+  \******************************/
+/*! exports provided: __wbg_set_wasm, greet, Cell, Universe, __wbg_alert_e42a11907a963f57, __wbindgen_throw */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _game_of_life_bg_wasm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./game_of_life_bg.wasm */ \"../pkg/game_of_life_bg.wasm\");\n/* harmony import */ var _game_of_life_bg_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./game_of_life_bg.js */ \"../pkg/game_of_life_bg.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"__wbg_set_wasm\", function() { return _game_of_life_bg_js__WEBPACK_IMPORTED_MODULE_1__[\"__wbg_set_wasm\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"greet\", function() { return _game_of_life_bg_js__WEBPACK_IMPORTED_MODULE_1__[\"greet\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Cell\", function() { return _game_of_life_bg_js__WEBPACK_IMPORTED_MODULE_1__[\"Cell\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Universe\", function() { return _game_of_life_bg_js__WEBPACK_IMPORTED_MODULE_1__[\"Universe\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"__wbg_alert_e42a11907a963f57\", function() { return _game_of_life_bg_js__WEBPACK_IMPORTED_MODULE_1__[\"__wbg_alert_e42a11907a963f57\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"__wbindgen_throw\", function() { return _game_of_life_bg_js__WEBPACK_IMPORTED_MODULE_1__[\"__wbindgen_throw\"]; });\n\n\n\nObject(_game_of_life_bg_js__WEBPACK_IMPORTED_MODULE_1__[\"__wbg_set_wasm\"])(_game_of_life_bg_wasm__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n//# sourceURL=webpack:///../pkg/game_of_life.js?");
+
+/***/ }),
+
+/***/ "../pkg/game_of_life_bg.js":
+/*!*********************************!*\
+  !*** ../pkg/game_of_life_bg.js ***!
+  \*********************************/
+/*! exports provided: __wbg_set_wasm, greet, Cell, Universe, __wbg_alert_e42a11907a963f57, __wbindgen_throw */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"__wbg_set_wasm\", function() { return __wbg_set_wasm; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"greet\", function() { return greet; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Cell\", function() { return Cell; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Universe\", function() { return Universe; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"__wbg_alert_e42a11907a963f57\", function() { return __wbg_alert_e42a11907a963f57; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"__wbindgen_throw\", function() { return __wbindgen_throw; });\nlet wasm;\nfunction __wbg_set_wasm(val) {\n    wasm = val;\n}\n\n\nconst lTextDecoder = typeof TextDecoder === 'undefined' ? (0, module.require)('util').TextDecoder : TextDecoder;\n\nlet cachedTextDecoder = new lTextDecoder('utf-8', { ignoreBOM: true, fatal: true });\n\ncachedTextDecoder.decode();\n\nlet cachedUint8Memory0 = null;\n\nfunction getUint8Memory0() {\n    if (cachedUint8Memory0 === null || cachedUint8Memory0.byteLength === 0) {\n        cachedUint8Memory0 = new Uint8Array(wasm.memory.buffer);\n    }\n    return cachedUint8Memory0;\n}\n\nfunction getStringFromWasm0(ptr, len) {\n    ptr = ptr >>> 0;\n    return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));\n}\n/**\n*/\nfunction greet() {\n    wasm.greet();\n}\n\nlet cachedInt32Memory0 = null;\n\nfunction getInt32Memory0() {\n    if (cachedInt32Memory0 === null || cachedInt32Memory0.byteLength === 0) {\n        cachedInt32Memory0 = new Int32Array(wasm.memory.buffer);\n    }\n    return cachedInt32Memory0;\n}\n/**\n*/\nconst Cell = Object.freeze({ Dead:0,\"0\":\"Dead\",Alive:1,\"1\":\"Alive\", });\n/**\n*/\nclass Universe {\n\n    static __wrap(ptr) {\n        ptr = ptr >>> 0;\n        const obj = Object.create(Universe.prototype);\n        obj.__wbg_ptr = ptr;\n\n        return obj;\n    }\n\n    __destroy_into_raw() {\n        const ptr = this.__wbg_ptr;\n        this.__wbg_ptr = 0;\n\n        return ptr;\n    }\n\n    free() {\n        const ptr = this.__destroy_into_raw();\n        wasm.__wbg_universe_free(ptr);\n    }\n    /**\n    */\n    tick() {\n        wasm.universe_tick(this.__wbg_ptr);\n    }\n    /**\n    * @returns {Universe}\n    */\n    static new() {\n        const ret = wasm.universe_new();\n        return Universe.__wrap(ret);\n    }\n    /**\n    * @returns {string}\n    */\n    render() {\n        let deferred1_0;\n        let deferred1_1;\n        try {\n            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);\n            wasm.universe_render(retptr, this.__wbg_ptr);\n            var r0 = getInt32Memory0()[retptr / 4 + 0];\n            var r1 = getInt32Memory0()[retptr / 4 + 1];\n            deferred1_0 = r0;\n            deferred1_1 = r1;\n            return getStringFromWasm0(r0, r1);\n        } finally {\n            wasm.__wbindgen_add_to_stack_pointer(16);\n            wasm.__wbindgen_free(deferred1_0, deferred1_1);\n        }\n    }\n    /**\n    * @returns {number}\n    */\n    width() {\n        const ret = wasm.universe_width(this.__wbg_ptr);\n        return ret >>> 0;\n    }\n    /**\n    * @returns {number}\n    */\n    height() {\n        const ret = wasm.universe_height(this.__wbg_ptr);\n        return ret >>> 0;\n    }\n    /**\n    * @returns {number}\n    */\n    cells() {\n        const ret = wasm.universe_cells(this.__wbg_ptr);\n        return ret;\n    }\n}\n\nfunction __wbg_alert_e42a11907a963f57(arg0, arg1) {\n    alert(getStringFromWasm0(arg0, arg1));\n};\n\nfunction __wbindgen_throw(arg0, arg1) {\n    throw new Error(getStringFromWasm0(arg0, arg1));\n};\n\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../www/node_modules/webpack/buildin/harmony-module.js */ \"./node_modules/webpack/buildin/harmony-module.js\")(module)))\n\n//# sourceURL=webpack:///../pkg/game_of_life_bg.js?");
+
+/***/ }),
+
+/***/ "../pkg/game_of_life_bg.wasm":
+/*!***********************************!*\
+  !*** ../pkg/game_of_life_bg.wasm ***!
+  \***********************************/
+/*! exports provided: memory, __wbg_universe_free, universe_tick, universe_new, universe_render, universe_width, universe_height, universe_cells, greet, __wbindgen_add_to_stack_pointer, __wbindgen_free */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\"use strict\";\n// Instantiate WebAssembly module\nvar wasmExports = __webpack_require__.w[module.i];\n__webpack_require__.r(exports);\n// export exports from WebAssembly module\nfor(var name in wasmExports) if(name != \"__webpack_init__\") exports[name] = wasmExports[name];\n// exec imports from WebAssembly module (for esm order)\n/* harmony import */ var m0 = __webpack_require__(/*! ./game_of_life_bg.js */ \"../pkg/game_of_life_bg.js\");\n\n\n// exec wasm module\nwasmExports[\"__webpack_init__\"]()\n\n//# sourceURL=webpack:///../pkg/game_of_life_bg.wasm?");
+
+/***/ }),
+
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var game_of_life__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! game-of-life */ \"../pkg/game_of_life.js\");\n/* harmony import */ var game_of_life_game_of_life_bg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! game-of-life/game_of_life_bg */ \"../pkg/game_of_life_bg.wasm\");\n\r\n\r\n\r\nconst CELL_SIZE = 5; //px\r\nconst GRID_COLOR = \"#CCCCCC\";\r\nconst DEAD_COLOR = \"#FFFFFF\";\r\nconst ALIVE_COLOR = \"#000000\";\r\n\r\nconst universe = game_of_life__WEBPACK_IMPORTED_MODULE_0__[\"Universe\"].new();\r\nconst width = universe.width();\r\nconst height = universe.height();\r\n\r\nconst canvas = document.getElementById(\"game-of-life-canvas\");\r\ncanvas.height = (CELL_SIZE + 1) * height + 1;\r\ncanvas.widith = (CELL_SIZE + 1) * width + 1;\r\n\r\n\r\nconst ctx = canvas.getContext('2d');\r\n\r\nconst renderLoop = () => {\r\n    universe.tick();\r\n\r\n    drawGrid();\r\n    drawCells();\r\n\r\n    requestAnimationFrame(renderLoop);\r\n};\r\n\r\nconst drawGrid = () => {\r\n    ctx.beginPath();\r\n    ctx.strokeStyle = GRID_COLOR;\r\n\r\n    // Vertical lines.\r\n    for (let i = 0; i <= width; i++) {\r\n        ctx.moveTo(i * (CELL_SIZE + 1) + 1, 0);\r\n        ctx.lineTo(i * (CELL_SIZE + 1) + 1, (CELL_SIZE + 1) * height + 1);\r\n    }\r\n\r\n    // Horizontal lines.\r\n    for (let j = 0; j <= height; j++) {\r\n        ctx.moveTo(0, j * (CELL_SIZE + 1) + 1);\r\n        ctx.lineTo((CELL_SIZE + 1) * width + 1, j * (CELL_SIZE + 1) + 1);\r\n    }\r\n\r\n    ctx.stroke();\r\n};\r\n\r\n\r\nconst getIndex = (row, column) => {\r\n    return row * width + column;\r\n};\r\n\r\nconst drawCells = () => {\r\n    const cellsPtr = universe.cells();\r\n    const cells = new Uint8Array(game_of_life_game_of_life_bg__WEBPACK_IMPORTED_MODULE_1__[\"memory\"].buffer, cellsPtr, width * height);\r\n\r\n    ctx.beginPath();\r\n\r\n    for (let row = 0; row < height; row++) {\r\n        for (let col = 0; col < width; col++) {\r\n            const idx = getIndex(row, col);\r\n\r\n            ctx.fillStyle = cells[idx] === game_of_life__WEBPACK_IMPORTED_MODULE_0__[\"Cell\"].Dead\r\n                ? DEAD_COLOR\r\n                : ALIVE_COLOR;\r\n\r\n            ctx.fillRect(\r\n                col * (CELL_SIZE + 1) + 1,\r\n                row * (CELL_SIZE + 1) + 1,\r\n                CELL_SIZE,\r\n                CELL_SIZE\r\n            );\r\n        }\r\n        // Dead cells.\r\n        ctx.fillStyle = DEAD_COLOR;\r\n        for (let row = 0; row < height; row++) {\r\n            for (let col = 0; col < width; col++) {\r\n                const idx = getIndex(row, col);\r\n                if (cells[idx] !== game_of_life__WEBPACK_IMPORTED_MODULE_0__[\"Cell\"].Dead) {\r\n                    continue;\r\n                }\r\n\r\n                ctx.fillRect(\r\n                    col * (CELL_SIZE + 1) + 1,\r\n                    row * (CELL_SIZE + 1) + 1,\r\n                    CELL_SIZE,\r\n                    CELL_SIZE\r\n                );\r\n            }\r\n        }\r\n    }\r\n\r\n    ctx.stroke();\r\n};\r\n\r\ndrawGrid();\r\ndrawCells();\r\nrequestAnimationFrame(renderLoop);\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/harmony-module.js":
+/*!*******************************************!*\
+  !*** (webpack)/buildin/harmony-module.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpackPolyfill) {\n\t\tvar module = Object.create(originalModule);\n\t\t// module.parent = undefined by default\n\t\tif (!module.children) module.children = [];\n\t\tObject.defineProperty(module, \"loaded\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.l;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"id\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.i;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"exports\", {\n\t\t\tenumerable: true\n\t\t});\n\t\tmodule.webpackPolyfill = 1;\n\t}\n\treturn module;\n};\n\n\n//# sourceURL=webpack:///(webpack)/buildin/harmony-module.js?");
+
+/***/ })
+
+}]);
